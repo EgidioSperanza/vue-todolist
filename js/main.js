@@ -15,6 +15,7 @@ new Vue({
                 isDone: false
             }
         ],
+        newTodo:"",
     },
     methods:{
         getDone(index){
@@ -27,6 +28,11 @@ new Vue({
         },
         deleteTodo(index){
             this.todoList.splice(index, 1);
+        },
+        addTodo(e){
+            this.newTodo=e;
+            this.todoList.push({text:e, isDone:false});
+            this.newTodo="";
         }
     }
 });  

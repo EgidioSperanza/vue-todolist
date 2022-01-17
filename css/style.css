@@ -4,7 +4,12 @@
   box-sizing: border-box;
 }
 #app{
-    margin: 0 auto;
+text-align: center;}
+h1{
+    margin-bottom: 20px;
+}
+input{
+    width: 50vw;
 }
 .completed {
   background-color: rgba(0, 128, 0, 0.4);

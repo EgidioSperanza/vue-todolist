@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#app{
+    margin: 0 auto;
+}
+.completed {
+  background-color: rgba(0, 128, 0, 0.4);
+}
+.incomplete {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+.completed > span{
+    text-decoration-line: line-through
+}
+ul{ 
+    width: 80vw;
+    padding: 20px;
+    margin: 0 auto;
+    list-style: none;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+li:first-child{
+    border-top: 1px solid #000;
+}
+

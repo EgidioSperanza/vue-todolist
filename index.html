@@ -15,13 +15,14 @@
 </head>
 <body>
     <div id="app">
+        <div class="add-todo">
         <h1>Lista di cose da fare</h1>
-        <input type="text" v-model="newTodo" @keyup.enter="addTodo(newTodo)">
-        <button @click="addTodo(newTodo)">Aggiungi</button>
+            <input type="text" v-model="newTodo" @keyup.enter="addTodo(newTodo)">
+            <button @click="addTodo(newTodo)">Aggiungi</button>
+        </div>
         <ul>
-            <li v-for="(todo, index) in todoList" :class="getDone(index)" @click="setDone(todoList[index])">
-                <span>{{todoList[index].text}}</span>
-                
+            <li v-for="(todo, index) in todoList" :class="getDone(index)">
+                <span @click="setDone(todoList[index])">{{todoList[index].text}}</span>
                 <i @click="deleteTodo(index)" class="fas fa-times"></i>
             </li>
         </ul>

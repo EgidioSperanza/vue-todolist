@@ -3,8 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-#app{
-text-align: center;}
 h1{
     margin-bottom: 20px;
 }
@@ -29,7 +27,6 @@ ul{
 li{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 20px;
     border-bottom: 1px solid #000;
     border-left: 1px solid #000;
@@ -37,5 +34,14 @@ li{
 }
 li:first-child{
     border-top: 1px solid #000;
+}
+
+span{
+    flex-grow: 1;
+}
+
+.add-todo{
+    text-align: center;
+    margin-bottom: 20px;
 }
 

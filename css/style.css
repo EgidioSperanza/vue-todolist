@@ -15,6 +15,12 @@ input {
 .incomplete {
   background-color: rgba(255, 0, 0, 0.4);
 }
+.completed:hover {
+  background-color: rgb(0, 128, 0);
+}
+.incomplete:hover {
+  background-color: rgb(255, 0, 0);
+}
 .completed > span {
   text-decoration-line: line-through;
 }

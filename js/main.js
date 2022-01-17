@@ -23,14 +23,14 @@ new Vue({
       else return "incomplete";
     },
     setDone(e) {
-      e.isDone ? (e.isDone = false) : (e.isDone = true);
+      if (e.isDone) e.isDone = false;
+      else e.isDone = true;
     },
     deleteTodo(index) {
       this.todoList.splice(index, 1);
     },
-    addTodo(e) {
-      this.newTodo = e;
-      this.todoList.push({ text: e, isDone: false });
+    addTodo() {
+      this.todoList.push({ text: this.newTodo, isDone: false });
       this.newTodo = "";
     },
   },

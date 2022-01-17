@@ -17,8 +17,8 @@
     <div id="app">
         <div class="add-todo">
         <h1>Lista di cose da fare</h1>
-            <input type="text" v-model="newTodo" @keyup.enter="addTodo(newTodo)">
-            <button @click="addTodo(newTodo)">Aggiungi</button>
+            <input type="text" v-model="newTodo" @keyup.enter="addTodo()">
+            <button @click="addTodo()">Aggiungi</button>
         </div>
         <ul>
             <li v-for="(todo, index) in todoList" :class="getDone(index)">

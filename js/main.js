@@ -22,9 +22,8 @@ new Vue({
       if (this.todoList[index].isDone) return "completed";
       else return "incomplete";
     },
-    setDone(e) {
-      if (e.isDone) e.isDone = false;
-      else e.isDone = true;
+    setDone(element) {
+      element.isDone = !element.isDone;
     },
     deleteTodo(index) {
       this.todoList.splice(index, 1);

@@ -33,7 +33,6 @@ ul {
 li {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
   border-bottom: 1px solid #000;
   border-left: 1px solid #000;
   border-right: 1px solid #000;
@@ -44,6 +43,7 @@ li:first-child {
 
 span {
   flex-grow: 1;
+  padding: 20px;
 }
 
 .add-todo {

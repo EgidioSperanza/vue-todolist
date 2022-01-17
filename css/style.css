@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+    background-color: #c0c0c0;
+}
 h1 {
   margin-bottom: 20px;
 }
@@ -26,9 +29,11 @@ input {
 }
 ul {
   width: 80vw;
-  padding: 20px;
+  padding: 60px;
   margin: 0 auto;
   list-style: none;
+  background-color: #333;
+  border-radius: 50px;
 }
 li {
   display: flex;
@@ -39,6 +44,11 @@ li {
 }
 li:first-child {
   border-top: 1px solid #000;
+  border-radius: 25px 25px 0 0;
+}
+li:last-child {
+  border-top: 1px solid #000;
+  border-radius: 0 0 25px 25px;
 }
 
 span {

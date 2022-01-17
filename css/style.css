@@ -46,6 +46,10 @@ span {
   padding: 20px;
 }
 
+i{
+    padding: 20px;
+}
+
 .add-todo {
   text-align: center;
   margin-bottom: 20px;

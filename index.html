@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tobo List</title>
-        <!-- ----FONT---- -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- ----FONT---- -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
     <!-- ----CSS---- -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- ----CND VUE---- -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-
-</head>
-<body>
+  </head>
+  <body>
     <div id="app">
-        <div class="add-todo">
+      <div class="add-todo">
         <h1>Lista di cose da fare</h1>
-            <input type="text" v-model="newTodo" @keyup.enter="addTodo()">
-            <button @click="addTodo()">Aggiungi</button>
-        </div>
-        <ul>
-            <li v-for="(todo, index) in todoList" :class="todo.isDone ? 'completed' : 'incomplete'">
-                <span @click="setDone(todoList[index])">{{todoList[index].text}}</span>
-                <i @click="deleteTodo(index)" class="fas fa-times"></i>
-            </li>
-        </ul>
+        <input type="text" v-model="newTodo" @keyup.enter="addTodo()" />
+        <button @click="addTodo()">Aggiungi</button>
+        <div v-if="errorAddTodo" class="error-add-todo">"Un promemoria vuoto risulterebbe inutile"</div>
+      </div>
+      <ul>
+        <li
+          v-for="(todo, index) in todoList"
+          :class="getOnlyOneClass(todo)"
+        >   
+          <span @click="setDone(todoList[index])"
+            >{{todo.text}}</span
+          >
+          <i @click="deleteTodo(index)" class="fas fa-times"></i>
+        </li>
+        <span class="no-one" v-if="todoList.length===0">Non hai annotato altre cose da fare</span>
+      </ul>
     </div>
-    
+
     <script src="./js/main.js"></script>
-</body>
+  </body>
 </html>

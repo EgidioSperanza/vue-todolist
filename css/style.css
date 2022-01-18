@@ -42,15 +42,25 @@ li {
   border-left: 1px solid #000;
   border-right: 1px solid #000;
 }
-li:first-child {
+li:first-child:not(.only-one) {
   border-top: 1px solid #000;
   border-radius: 25px 25px 0 0;
 }
-li:last-child {
-  border-top: 1px solid #000;
+li:last-child:not(.only-one) {
   border-radius: 0 0 25px 25px;
 }
-
+.only-one,.no-one{
+  border-top: 1px solid #000;
+  border-radius: 25px;
+}
+.no-one{
+  border: 3px solid #000;
+  background-color: #c0c0c0;
+}
+.error-add-todo{
+  color: rgba(100, 9, 9, 0.794);
+  padding: 10px;
+}
 span {
   flex-grow: 1;
   padding: 20px;

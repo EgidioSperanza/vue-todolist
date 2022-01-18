@@ -16,8 +16,21 @@ new Vue({
       },
     ],
     newTodo: "",
+    errorAddTodo: false,
   },
   methods: {
+    getOnlyOneClass(element){
+      let classList = [];
+      if (element.isDone) {
+        classList.push('completed')
+      } else {
+        classList.push('incomplete')
+      }
+      if (this.todoList.length===1) {
+        classList.push('only-one')
+      }
+      return classList;
+    },
     setDone(element) {
       element.isDone = !element.isDone;
     },
@@ -25,8 +38,13 @@ new Vue({
       this.todoList.splice(index, 1);
     },
     addTodo() {
-      this.todoList.push({ text: this.newTodo, isDone: false });
-      this.newTodo = "";
+      if (this.newTodo.length>=1){
+        this.todoList.push({ text: this.newTodo, isDone: false });
+        this.newTodo = "";
+        this.errorAddTodo=false
+      }else{
+        this.errorAddTodo=true;
+      }
     },
   },
 });

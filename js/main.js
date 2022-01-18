@@ -18,10 +18,6 @@ new Vue({
     newTodo: "",
   },
   methods: {
-    getDone(index) {
-      if (this.todoList[index].isDone) return "completed";
-      else return "incomplete";
-    },
     setDone(element) {
       element.isDone = !element.isDone;
     },

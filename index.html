@@ -21,7 +21,7 @@
             <button @click="addTodo()">Aggiungi</button>
         </div>
         <ul>
-            <li v-for="(todo, index) in todoList" :class="getDone(index)">
+            <li v-for="(todo, index) in todoList" :class="todo.isDone ? 'completed' : 'incomplete'">
                 <span @click="setDone(todoList[index])">{{todoList[index].text}}</span>
                 <i @click="deleteTodo(index)" class="fas fa-times"></i>
             </li>

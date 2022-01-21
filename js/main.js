@@ -17,16 +17,17 @@ new Vue({
     ],
     newTodo: "",
     errorAddTodo: false,
+    classesList:[]
   },
   methods: {
     //flag as completed class
     //When is a single element in Todo List add a class for Border
     getListElClasses(element){
-      element.isDone ?  classList['completed'] :  classList['incomplete'];
+      element.isDone ?  this.classesList.push('completed') :  this.classesList.push('incomplete')
       if (this.todoList.length===1) {
-        classList.push('only-one')
+        this.classesList.push('only-one')
       }
-      return classList;
+      return this.classesList;
     },
     setDone(element) {
       element.isDone = !element.isDone;

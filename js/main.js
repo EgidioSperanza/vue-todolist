@@ -17,18 +17,21 @@ new Vue({
     ],
     newTodo: "",
     errorAddTodo: false,
-    classesList:[]
   },
   methods: {
     //flag as completed class
     //When is a single element in Todo List add a class for Border
-    getListElClasses(element){
-      element.isDone ?  this.classesList.push('completed') :  this.classesList.push('incomplete')
-      if (this.todoList.length===1) {
-        this.classesList.push('only-one')
+    getListElClasses(element) {
+      element.isDone
+        ? (classesList = ["completed"])
+        : (classesList = ["incomplete"]);
+      if (this.todoList.length === 1) {
+        classesList.push("only-one");
       }
-      return this.classesList;
+      console.log(classesList);
+      return classesList;
     },
+
     setDone(element) {
       element.isDone = !element.isDone;
     },
@@ -36,12 +39,12 @@ new Vue({
       this.todoList.splice(index, 1);
     },
     addTodo() {
-      if (this.newTodo.length>=1){
+      if (this.newTodo.length >= 1) {
         this.todoList.push({ text: this.newTodo, isDone: false });
         this.newTodo = "";
-        this.errorAddTodo=false
-      }else{
-        this.errorAddTodo=true;
+        this.errorAddTodo = false;
+      } else {
+        this.errorAddTodo = true;
       }
     },
   },

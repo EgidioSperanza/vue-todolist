@@ -22,11 +22,9 @@ new Vue({
     //flag as completed class
     //When is a single element in Todo List add a class for Border
     getListElClasses(element) {
-      element.isDone
-        ? (classesList = ["completed"])
-        : (classesList = ["incomplete"]);
+      let classesList = element.isDone ? "completed" : "incomplete";
       if (this.todoList.length === 1) {
-        classesList.push("only-one");
+        classesList += ' only-one';
       }
       console.log(classesList);
       return classesList;

@@ -23,19 +23,18 @@
         <h1>Lista di cose da fare</h1>
         <input type="text" v-model="newTodo" @keyup.enter="addTodo()" />
         <button @click="addTodo()">Aggiungi</button>
-        <div v-if="errorAddTodo" class="error-add-todo">"Un promemoria vuoto risulterebbe inutile"</div>
+        <div v-if="errorAddTodo" class="error-add-todo">
+          "Un promemoria vuoto risulterebbe inutile"
+        </div>
       </div>
       <ul>
-        <li
-          v-for="(todo, index) in todoList"
-          :class="getOnlyOneClass(todo)"
-        >   
-          <span @click="setDone(todoList[index])"
-            >{{todo.text}}</span
-          >
+        <li v-for="(todo, index) in todoList" :class="getListElClasses(todo)">
+          <span @click="setDone(todoList[index])">{{todo.text}}</span>
           <i @click="deleteTodo(index)" class="fas fa-times"></i>
         </li>
-        <span class="no-one" v-if="todoList.length===0">Non hai annotato altre cose da fare</span>
+        <span class="no-one" v-if="todoList.length===0"
+          >Non hai annotato altre cose da fare</span
+        >
       </ul>
     </div>
 
